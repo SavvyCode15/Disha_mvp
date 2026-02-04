@@ -1,0 +1,172 @@
+{
+  "general_tips": [
+    "Always carry a copy of your passport and visa, keep originals in hotel safe",
+    "Use official prepaid taxi services from airports and railway stations",
+    "Negotiate auto-rickshaw fares before starting your journey or insist on meter",
+    "Drink only bottled or properly filtered water, avoid ice in drinks",
+    "Keep emergency contacts and hotel address written in Hindi and English",
+    "Be cautious of overly friendly strangers offering help or deals",
+    "Use official government tourism counters for information and bookings",
+    "Keep small denomination notes handy for tips and small purchases",
+    "Avoid displaying expensive jewelry, cameras, or large amounts of cash",
+    "Trust your instincts - if something feels wrong, remove yourself from the situation"
+  ],
+  "area_specific": [
+    {
+      "area_name": "Connaught Place & Central Delhi",
+      "latitude": 28.6315,
+      "longitude": 77.2167,
+      "radius_km": 2.0,
+      "tips": [
+        "Beware of fake travel agents in CP inner and outer circles",
+        "Don't fall for 'government tourism office' scams - verify official addresses",
+        "Avoid touts offering cheap hotel deals or tour packages",
+        "Use authorized money changers only, avoid street currency exchange",
+        "Be cautious in Palika Bazaar - keep belongings secure",
+        "Stick to well-lit areas after dark, avoid empty metro stations late at night"
+      ]
+    },
+    {
+      "area_name": "Paharganj / New Delhi Railway Station",
+      "latitude": 28.6455,
+      "longitude": 77.2176,
+      "radius_km": 1.5,
+      "tips": [
+        "This area has many budget accommodations but higher crime rates",
+        "Avoid walking alone late at night, especially in narrow lanes",
+        "Be extra cautious of pickpockets in crowded areas",
+        "Don't trust strangers offering drugs or illegal services",
+        "Verify hotel bookings in advance, avoid last-minute touts",
+        "Keep room doors locked and use hotel safes for valuables",
+        "Be wary of overcharging in restaurants and shops"
+      ]
+    },
+    {
+      "area_name": "Old Delhi / Chandni Chowk",
+      "latitude": 28.6506,
+      "longitude": 77.2303,
+      "radius_km": 1.0,
+      "tips": [
+        "Navigate narrow lanes carefully, watch for motorcycles and cycles",
+        "Bargain hard in markets but be respectful of vendors",
+        "Try street food from busy stalls with high turnover",
+        "Keep bags zipped and in front of you in crowded markets",
+        "Avoid buying electronics or expensive items from street vendors",
+        "Be respectful when visiting religious sites like Jama Masjid",
+        "Use cycle rickshaws for short distances but agree on fare first"
+      ]
+    },
+    {
+      "area_name": "South Delhi Tourist Areas",
+      "latitude": 28.5535,
+      "longitude": 77.2588,
+      "radius_km": 3.0,
+      "tips": [
+        "Generally safer area but still be cautious with belongings",
+        "Use app-based cabs (Uber/Ola) for reliable transportation",
+        "Restaurants and shops here may be pricier but generally more reliable",
+        "Hauz Khas Village can get crowded on weekends - watch for pickpockets",
+        "Lotus Temple area is very safe but beware of overcharging by auto drivers",
+        "Khan Market and Select City Walk are safe for shopping and dining"
+      ]
+    }
+  ],
+  "transportation_scams": [
+    {
+      "scam": "Taxi drivers claiming meter is broken and quoting inflated fixed prices",
+      "solution": "Insist on meter or use app-based cabs like Uber/Ola. Walk away if they refuse."
+    },
+    {
+      "scam": "Auto-rickshaw drivers taking longer routes to increase fare",
+      "solution": "Use GPS on your phone to track route. Agree on fare beforehand or insist on meter."
+    },
+    {
+      "scam": "Fake prepaid taxi counters at airports charging extra fees",
+      "solution": "Use only official prepaid taxi counters inside airport terminals. Verify rates on display boards."
+    },
+    {
+      "scam": "Drivers claiming your hotel is closed/full and offering alternatives",
+      "solution": "Call your hotel directly to confirm. Don't let drivers change your destination."
+    },
+    {
+      "scam": "Train station touts offering to help with tickets for a fee",
+      "solution": "Buy tickets only from official railway counters or authorized travel agents."
+    }
+  ],
+  "shopping_scams": [
+    {
+      "scam": "Gem and jewelry shops offering 'export quality' deals with fake certificates",
+      "solution": "Only buy from government-approved shops. Verify certifications independently."
+    },
+    {
+      "scam": "Carpet and handicraft shops pressuring for immediate purchase with 'special discounts'",
+      "solution": "Take time to compare prices. Don't be pressured into immediate decisions."
+    },
+    {
+      "scam": "Fake branded goods sold as originals in markets",
+      "solution": "Buy branded items only from authorized retailers. If price seems too good, it's likely fake."
+    },
+    {
+      "scam": "Overcharging tourists in markets and shops",
+      "solution": "Research fair prices beforehand. Bargain respectfully but firmly."
+    },
+    {
+      "scam": "Credit card skimming in unauthorized shops",
+      "solution": "Use cash in small shops. For cards, ensure machine is official and watch the transaction."
+    }
+  ],
+  "fair_price_guidelines": {
+    "transport": {
+      "auto_rickshaw_per_km": "INR 12-15",
+      "metro_ticket": "INR 10-60",
+      "bus_ticket": "INR 5-25",
+      "uber_ola_per_km": "INR 8-12",
+      "airport_taxi": "INR 400-800"
+    },
+    "food": {
+      "street_food_snack": "INR 20-100",
+      "local_restaurant_meal": "INR 150-400",
+      "mid_range_restaurant": "INR 500-1200",
+      "bottled_water": "INR 20-50",
+      "chai_tea": "INR 10-30"
+    },
+    "shopping": {
+      "cotton_tshirt": "INR 200-800",
+      "handicraft_souvenir": "INR 100-2000",
+      "pashmina_shawl": "INR 500-5000",
+      "spices_per_100g": "INR 50-300",
+      "books": "INR 100-500"
+    },
+    "guides": {
+      "monument_guide_half_day": "INR 300-800",
+      "city_tour_guide_full_day": "INR 1000-2500",
+      "audio_guide_rental": "INR 100-200",
+      "group_tour_per_person": "INR 500-1500"
+    }
+  },
+  "emergency_contacts": {
+    "police": "100",
+    "ambulance": "102",
+    "fire": "101",
+    "women_helpline": "1091",
+    "tourist_helpline": "1363"
+  },
+  "health_safety": [
+    "Carry basic first aid kit with band-aids, antiseptic, and pain relievers",
+    "Use mosquito repellent, especially during monsoon season",
+    "Avoid raw vegetables and fruits from street vendors",
+    "Get travel insurance that covers medical emergencies",
+    "Know location of nearest hospital to your accommodation",
+    "Carry any prescription medications in original containers",
+    "Be cautious of air pollution - consider wearing masks on high pollution days"
+  ],
+  "cultural_etiquette": [
+    "Remove shoes before entering temples, mosques, and some homes",
+    "Dress modestly when visiting religious sites - cover shoulders and legs",
+    "Use right hand for eating, greeting, and giving/receiving items",
+    "Don't point feet toward people or religious objects",
+    "Ask permission before photographing people, especially women",
+    "Respect local customs during festivals and religious observances",
+    "Learn basic Hindi greetings like 'Namaste' and 'Dhanyawad' (thank you)"
+  ]
+}

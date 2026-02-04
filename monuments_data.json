@@ -1,0 +1,338 @@
+[
+  {
+    "id": "red-fort",
+    "name": "Red Fort (Lal Qila)",
+    "latitude": 28.6562,
+    "longitude": 77.2410,
+    "category": "Historical Monument",
+    "description": "A magnificent Mughal fortress built by Emperor Shah Jahan in the 17th century. This UNESCO World Heritage Site served as the main residence of the Mughal emperors and is a symbol of India's rich history.",
+    "audio_script": "Welcome to the iconic Red Fort, the crown jewel of Mughal architecture. As you stand before these massive red sandstone walls, imagine Emperor Shah Jahan walking through these very gates. Look to your left to see the impressive Lahori Gate, the main entrance used by the Mughals. The fort stretches over 254 acres and took nearly a decade to complete. Every August 15th, India's Prime Minister hoists the national flag from these ramparts.",
+    "best_time_to_visit": "October to March, early morning or late afternoon",
+    "average_visit_duration": "2-3 hours",
+    "opening_hours": "Tuesday to Sunday: 9:30 AM - 4:30 PM (Closed on Mondays)",
+    "pricing": {
+      "indian": "35",
+      "foreigner": "550",
+      "children_under_15": "Free"
+    },
+    "fair_prices": {
+      "audio_guide": "INR 100-150",
+      "photography": "INR 25",
+      "video_camera": "INR 25",
+      "guide_service": "INR 300-500"
+    },
+    "safety_warnings": [
+      "Beware of fake guides offering services outside the fort",
+      "Keep valuables secure in crowded areas",
+      "Don't buy overpriced souvenirs from vendors inside",
+      "Verify official ticket counters to avoid scams"
+    ],
+    "nearby_attractions": [
+      "Jama Masjid (1.2 km)",
+      "Chandni Chowk Market (0.8 km)",
+      "Raj Ghat (2.5 km)",
+      "Feroz Shah Kotla (3.2 km)"
+    ],
+    "tips": [
+      "Visit early morning to avoid crowds and heat",
+      "Wear comfortable walking shoes",
+      "Carry water bottle and sun protection",
+      "Don't miss the evening sound and light show",
+      "Use official ASI guides for authentic information"
+    ]
+  },
+  {
+    "id": "qutub-minar",
+    "name": "Qutub Minar",
+    "latitude": 28.5244,
+    "longitude": 77.1855,
+    "category": "Historical Monument",
+    "description": "The world's tallest brick minaret standing at 73 meters, built in the 12th century. This UNESCO World Heritage Site represents the beginning of Muslim rule in India and showcases Indo-Islamic architecture.",
+    "audio_script": "Behold the magnificent Qutub Minar, soaring 73 meters into the Delhi sky. This towering masterpiece was begun by Qutb-ud-din Aibak in 1192 and completed by his successors. Notice the intricate carvings and verses from the Quran spiraling up its red sandstone surface. Look around you at the Qutub Complex - the Iron Pillar to your right has stood rust-free for over 1,600 years, defying modern science.",
+    "best_time_to_visit": "October to March, morning hours preferred",
+    "average_visit_duration": "1-2 hours",
+    "opening_hours": "Daily: 7:00 AM - 5:00 PM",
+    "pricing": {
+      "indian": "30",
+      "foreigner": "550",
+      "children_under_15": "Free"
+    },
+    "fair_prices": {
+      "parking": "INR 20-30",
+      "guide_service": "INR 200-400",
+      "photography": "Free",
+      "refreshments": "INR 50-100"
+    },
+    "safety_warnings": [
+      "Watch for pickpockets in crowded areas",
+      "Don't climb on historical structures",
+      "Avoid unauthorized guides demanding payment",
+      "Be cautious of overpriced food vendors nearby"
+    ],
+    "nearby_attractions": [
+      "Mehrauli Archaeological Park (1.5 km)",
+      "Lotus Temple (8.2 km)",
+      "Humayun's Tomb (12.5 km)",
+      "Garden of Five Senses (2.8 km)"
+    ],
+    "tips": [
+      "Visit during golden hour for best photography",
+      "Explore the entire Qutub Complex, not just the minaret",
+      "Read about the Iron Pillar's metallurgical mystery",
+      "Combine with nearby Mehrauli village exploration",
+      "Carry sun protection and comfortable shoes"
+    ]
+  },
+  {
+    "id": "india-gate",
+    "name": "India Gate",
+    "latitude": 28.6129,
+    "longitude": 77.2295,
+    "category": "War Memorial",
+    "description": "A majestic war memorial dedicated to 84,000 Indian soldiers who died in World War I and the Third Afghan War. This 42-meter high arch stands as a symbol of sacrifice and national pride.",
+    "audio_script": "You're standing before India Gate, Delhi's most iconic landmark and a solemn tribute to our brave soldiers. This 42-meter high sandstone arch was designed by Sir Edwin Lutyens and completed in 1931. Look up to see the names of 13,300 soldiers carved into its walls. The eternal flame beneath, called Amar Jawan Jyoti, burns continuously in memory of unknown soldiers. The vast lawns around you come alive every evening with families and food vendors.",
+    "best_time_to_visit": "Evening hours, especially sunset",
+    "average_visit_duration": "1-2 hours",
+    "opening_hours": "24 hours (best visited during daylight or evening)",
+    "pricing": {
+      "indian": "Free",
+      "foreigner": "Free",
+      "children_under_15": "Free"
+    },
+    "fair_prices": {
+      "parking": "INR 20-50",
+      "street_food": "INR 30-100",
+      "balloon_rides": "INR 50-100",
+      "photography_props": "INR 20-50"
+    },
+    "safety_warnings": [
+      "Be cautious of pickpockets in evening crowds",
+      "Don't leave belongings unattended on lawns",
+      "Avoid overpriced street food vendors",
+      "Watch for traffic when crossing roads"
+    ],
+    "nearby_attractions": [
+      "Rashtrapati Bhavan (2.1 km)",
+      "National Museum (1.8 km)",
+      "Connaught Place (2.5 km)",
+      "Rajpath/Kartavya Path (0.5 km)"
+    ],
+    "tips": [
+      "Visit during evening for the best atmosphere",
+      "Perfect spot for picnics and family time",
+      "Great for photography, especially at sunset",
+      "Try local street food but choose busy stalls",
+      "Combine with a walk down Rajpath to Rashtrapati Bhavan"
+    ]
+  },
+  {
+    "id": "humayuns-tomb",
+    "name": "Humayun's Tomb",
+    "latitude": 28.5933,
+    "longitude": 77.2507,
+    "category": "Historical Monument",
+    "description": "The first garden-tomb on the Indian subcontinent and inspiration for the Taj Mahal. Built in 1570 for Mughal Emperor Humayun, this UNESCO World Heritage Site showcases Persian architectural influences.",
+    "audio_script": "Welcome to Humayun's Tomb, the architectural predecessor to the famous Taj Mahal. Built by Humayun's wife Haji Begum in 1570, this magnificent structure introduced the concept of garden tombs to India. Notice the perfect symmetry as you approach - the red sandstone and white marble create a stunning contrast. Walk through the char bagh garden layout, representing paradise in Islamic tradition. The central dome you see rises 42 meters high and houses not just Humayun, but over 150 Mughal family members.",
+    "best_time_to_visit": "October to March, morning or late afternoon",
+    "average_visit_duration": "1.5-2 hours",
+    "opening_hours": "Daily: 6:00 AM - 6:00 PM",
+    "pricing": {
+      "indian": "40",
+      "foreigner": "600",
+      "children_under_15": "Free"
+    },
+    "fair_prices": {
+      "audio_guide": "INR 100-150",
+      "photography": "Free",
+      "guide_service": "INR 300-500",
+      "parking": "INR 30-50"
+    },
+    "safety_warnings": [
+      "Beware of fake guides at entrance",
+      "Don't touch or climb on monument structures",
+      "Keep valuables secure while exploring gardens",
+      "Avoid buying overpriced souvenirs from vendors"
+    ],
+    "nearby_attractions": [
+      "Hazrat Nizamuddin Dargah (1.2 km)",
+      "Khan-i-Khanan Tomb (0.8 km)",
+      "Purana Qila (3.5 km)",
+      "Lotus Temple (4.2 km)"
+    ],
+    "tips": [
+      "Best photography during golden hour",
+      "Explore the entire garden complex, not just main tomb",
+      "Visit nearby Nizamuddin Dargah for qawwali music",
+      "Wear comfortable shoes for garden walking",
+      "Carry water and sun protection"
+    ]
+  },
+  {
+    "id": "lotus-temple",
+    "name": "Lotus Temple",
+    "latitude": 28.5535,
+    "longitude": 77.2588,
+    "category": "Religious Site",
+    "description": "A stunning Bahá'í House of Worship shaped like a lotus flower with 27 marble petals. Completed in 1986, it welcomes people of all faiths for meditation and prayer in complete silence.",
+    "audio_script": "You're approaching the breathtaking Lotus Temple, one of Delhi's most photographed landmarks. This architectural marvel, designed by Fariborz Sahba, consists of 27 marble petals arranged in clusters of three to form a lotus flower. As you enter, notice the complete silence maintained inside - no talking, no photography, just peaceful meditation. The temple welcomes people of all religions and backgrounds. The nine pools surrounding the structure represent the lotus floating on water, creating a serene atmosphere perfect for reflection.",
+    "best_time_to_visit": "October to March, avoid Monday closures",
+    "average_visit_duration": "45 minutes to 1 hour",
+    "opening_hours": "Tuesday to Sunday: 9:00 AM - 5:30 PM (Closed Mondays)",
+    "pricing": {
+      "indian": "Free",
+      "foreigner": "Free",
+      "children_under_15": "Free"
+    },
+    "fair_prices": {
+      "parking": "INR 20-30",
+      "shoe_keeping": "INR 10-20",
+      "refreshments_nearby": "INR 50-150",
+      "auto_rickshaw": "INR 100-200"
+    },
+    "safety_warnings": [
+      "Remove shoes before entering temple premises",
+      "Maintain complete silence inside the temple",
+      "No photography allowed inside the main hall",
+      "Be cautious of overcharging by auto drivers"
+    ],
+    "nearby_attractions": [
+      "Kalkaji Mandir (2.8 km)",
+      "Nehru Place (4.5 km)",
+      "Okhla Bird Sanctuary (8.2 km)",
+      "Humayun's Tomb (4.2 km)"
+    ],
+    "tips": [
+      "Visit during weekdays to avoid crowds",
+      "Maintain silence and respect inside",
+      "Beautiful for photography from outside",
+      "Combine with nearby Kalkaji Temple visit",
+      "Wear modest clothing and be prepared to remove shoes"
+    ]
+  },
+  {
+    "id": "jama-masjid",
+    "name": "Jama Masjid",
+    "latitude": 28.6507,
+    "longitude": 77.2334,
+    "category": "Religious Site",
+    "description": "India's largest mosque built by Mughal Emperor Shah Jahan between 1650-1656. This magnificent structure can accommodate 25,000 worshippers and offers stunning views of Old Delhi from its minarets.",
+    "audio_script": "Welcome to Jama Masjid, India's largest and most magnificent mosque. Built by Emperor Shah Jahan, the same ruler who created the Taj Mahal, this architectural masterpiece took six years to complete. As you enter through one of the three gateways, notice the vast courtyard that can hold 25,000 people. The red sandstone and white marble create a striking contrast against the Delhi sky. If you're feeling adventurous, climb the southern minaret for breathtaking views of Old Delhi's bustling streets below.",
+    "best_time_to_visit": "October to March, avoid Friday prayer times",
+    "average_visit_duration": "1-1.5 hours",
+    "opening_hours": "Daily: 7:00 AM - 12:00 PM, 1:30 PM - 6:30 PM",
+    "pricing": {
+      "indian": "Free",
+      "foreigner": "300",
+      "children_under_15": "Free"
+    },
+    "fair_prices": {
+      "minaret_climb": "INR 100",
+      "camera_fee": "INR 200",
+      "shoe_keeping": "INR 10-20",
+      "guide_service": "INR 200-400"
+    },
+    "safety_warnings": [
+      "Dress modestly - cover arms, legs, and head",
+      "Remove shoes before entering mosque premises",
+      "Avoid visiting during prayer times",
+      "Be respectful of worshippers and customs"
+    ],
+    "nearby_attractions": [
+      "Red Fort (1.2 km)",
+      "Chandni Chowk (0.5 km)",
+      "Spice Market (0.8 km)",
+      "Raj Ghat (3.2 km)"
+    ],
+    "tips": [
+      "Dress conservatively and carry head covering",
+      "Visit early morning for peaceful experience",
+      "Climb minaret for panoramic Old Delhi views",
+      "Combine with Chandni Chowk market exploration",
+      "Respect prayer times and local customs"
+    ]
+  },
+  {
+    "id": "akshardham-temple",
+    "name": "Akshardham Temple",
+    "latitude": 28.6127,
+    "longitude": 77.2773,
+    "category": "Religious Site",
+    "description": "A modern architectural marvel showcasing traditional Indian culture and spirituality. Opened in 2005, this massive temple complex features intricate carvings, exhibitions, and cultural shows celebrating India's heritage.",
+    "audio_script": "You're standing before Akshardham, a modern wonder that celebrates 10,000 years of Indian culture. This magnificent temple, built without steel and completed in just five years, showcases the finest Indian craftsmanship. Notice the intricate carvings on pink sandstone and white marble - over 20,000 sculptures and statues adorn this complex. Inside, you'll find exhibitions, an IMAX theater, and musical fountains. The central monument houses a 11-foot gold-leafed statue of Bhagwan Swaminarayan, surrounded by 148 elephants carved from single stones.",
+    "best_time_to_visit": "October to March, Tuesday to Sunday",
+    "average_visit_duration": "3-4 hours",
+    "opening_hours": "Tuesday to Sunday: 9:30 AM - 6:30 PM (Closed Mondays)",
+    "pricing": {
+      "indian": "170",
+      "foreigner": "170",
+      "children_under_15": "100"
+    },
+    "fair_prices": {
+      "exhibitions": "INR 125-200",
+      "boat_ride": "INR 125",
+      "musical_fountain": "INR 80",
+      "parking": "INR 50-100"
+    },
+    "safety_warnings": [
+      "No mobile phones, cameras, or electronic items allowed",
+      "Deposit belongings at security counter before entry",
+      "Follow dress code - no shorts, sleeveless tops",
+      "Be prepared for thorough security checks"
+    ],
+    "nearby_attractions": [
+      "Yamuna Sports Complex (2.1 km)",
+      "Pragati Maidan (4.5 km)",
+      "India Gate (6.8 km)",
+      "Raj Ghat (8.2 km)"
+    ],
+    "tips": [
+      "Allow full day for complete experience",
+      "No electronic items allowed - deposit at entrance",
+      "Book exhibitions and shows in advance",
+      "Wear modest clothing and comfortable shoes",
+      "Try the vegetarian food court inside"
+    ]
+  },
+  {
+    "id": "lodhi-garden",
+    "name": "Lodhi Garden",
+    "latitude": 28.5930,
+    "longitude": 77.2197,
+    "category": "Park/Garden",
+    "description": "A beautiful 90-acre landscaped garden containing 15th-century tombs of Sayyid and Lodhi dynasties. This peaceful green space offers a perfect blend of history, nature, and recreation in the heart of Delhi.",
+    "audio_script": "Welcome to Lodhi Garden, Delhi's most beautiful historical park where nature and heritage blend seamlessly. As you walk through these 90 acres, you're surrounded by 500-year-old tombs of the Sayyid and Lodhi rulers. Look to your right to see the magnificent Bara Gumbad, and ahead lies the tomb of Mohammed Shah. The garden was redesigned by Lady Willingdon in 1936, creating this perfect harmony of Mughal architecture and English landscaping. Early morning joggers and yoga enthusiasts make this a living, breathing space.",
+    "best_time_to_visit": "October to March, early morning or evening",
+    "average_visit_duration": "1-2 hours",
+    "opening_hours": "Daily: 6:00 AM - 8:00 PM",
+    "pricing": {
+      "indian": "Free",
+      "foreigner": "Free",
+      "children_under_15": "Free"
+    },
+    "fair_prices": {
+      "parking": "INR 20-30",
+      "refreshments": "INR 50-150",
+      "photography": "Free",
+      "guide_service": "INR 200-300"
+    },
+    "safety_warnings": [
+      "Avoid isolated areas during early morning or late evening",
+      "Keep belongings secure while exercising",
+      "Be cautious of stray dogs in some areas",
+      "Don't venture into restricted archaeological zones"
+    ],
+    "nearby_attractions": [
+      "Khan Market (1.5 km)",
+      "India Habitat Centre (1.8 km)",
+      "Humayun's Tomb (3.2 km)",
+      "Safdarjung Tomb (2.1 km)"
+    ],
+    "tips": [
+      "Perfect for morning walks and jogging",
+      "Great spot for photography and picnics",
+      "Explore all the historical tombs within",
+      "Visit during flower blooming season (winter)",
+      "Combine with nearby Khan Market for food"
+    ]
+  }
+]
