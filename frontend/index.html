@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disha AI - Tour Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <h1>Disha AI</h1>
+            </div>
+            <div class="status-badge" id="connection-status">
+                <span class="dot"></span> Online
+            </div>
+        </header>
+
+        <!-- Main Content Grid -->
+        <main>
+            <!-- Left Panel: Chat & Interaction -->
+            <section class="chat-section">
+                <div class="chat-header">
+                    <h2>AI Guide</h2>
+                    <div class="location-simulator">
+                        <select id="simulated-location">
+                            <option value="">📍 Use Real GPS</option>
+                            <option value="28.6129,77.2295">🇮🇳 India Gate</option>
+                            <option value="28.6562,77.2410">🏰 Red Fort</option>
+                            <option value="28.5244,77.1855">🗼 Qutub Minar</option>
+                            <option value="28.5933,77.2507">🏛️ Humayun's Tomb</option>
+                            <option value="28.5535,77.2588">🪷 Lotus Temple</option>
+                            <option value="28.6507,77.2334">🕌 Jama Masjid</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="chat-window" id="chat-window">
+                    <div class="message bot">
+                        <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+                        <div class="text">Namaste! I'm your AI guide. I can tell you about history, prices, and safety tips for monuments nearby.</div>
+                    </div>
+                </div>
+
+                <div class="input-area">
+                    <input type="text" id="user-input" placeholder="Ask about history, tickets, or food..." autocomplete="off">
+                    <button id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                    <button id="voice-btn" class="secondary-btn"><i class="fa-solid fa-microphone"></i></button>
+                </div>
+            </section>
+
+            <!-- Right Panel: Context & Monuments -->
+            <section class="info-section">
+                
+                <!-- Current Context Card -->
+                <div class="location-card">
+                    <div class="card-header">
+                        <h3><i class="fa-solid fa-street-view"></i> Your Location</h3>
+                        <button id="refresh-location" class="icon-btn"><i class="fa-solid fa-arrows-rotate"></i></button>
+                    </div>
+                    <div class="location-details">
+                        <p id="current-coords">Waiting for GPS...</p>
+                        <p id="nearest-landmark" class="highlight">Unknown Location</p>
+                    </div>
+                    <div class="quick-actions">
+                        <button class="action-btn safety" onclick="getSafetyTips()">
+                            <i class="fa-solid fa-shield-halved"></i> Safety Tips
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Monuments List -->
+                <div class="monuments-list">
+                    <h3>Nearby Monuments</h3>
+                    <div id="monuments-container">
+                        <!-- Monument cards will be injected here -->
+                        <div class="placeholder-msg">Detecting your location...</div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <!-- Monument Detail Modal -->
+    <div id="monument-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title">Monument Name</h2>
+            <div class="modal-body">
+                <img id="modal-img" src="" alt="Monument" onerror="this.style.display='none'">
+                <p id="modal-desc"></p>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <span id="modal-timings"></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-ticket"></i>
+                        <span id="modal-price"></span>
+                    </div>
+                </div>
+                <div class="audio-player">
+                    <button id="play-audio-btn"><i class="fa-solid fa-play"></i> Play Audio Guide</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

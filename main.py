@@ -4,8 +4,10 @@ import sys
 from typing import List, Optional
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from chat_engine import get_chat_response
+import os
 
 # Load data at startup
 try:
@@ -39,6 +41,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Mount Frontend
+app.mount("/web", StaticFiles(directory="frontend", html=True), name="static")
 
 # Pydantic models
 class LocationRequest(BaseModel):
@@ -123,21 +128,12 @@ def get_safety_tips(lat: float, lon: float) -> List[str]:
 @app.get("/")
 async def root():
     """
-    API information and available endpoints
+    Redirect root to the web interface or show API info
     """
     return {
-        "name": "India Tourism AI Guide Backend",
-        "version": "1.0.0",
-        "description": "REST API for Delhi tourism with AI-powered chat and monument information",
-        "endpoints": [
-            "GET / - API information",
-            "GET /health - Health check",
-            "POST /api/check-location - Find nearby monuments",
-            "GET /api/monument/{monument_id} - Get monument details",
-            "GET /api/monuments/all - Get all monuments",
-            "POST /api/safety-tips - Get location-based safety tips",
-            "POST /api/chat - AI-powered chat with tour guide"
-        ]
+        "message": "Welcome to Disha AI API. Visit /web for the interface.",
+        "docs": "/docs",
+        "frontend": "/web"
     }
 
 @app.get("/health")
