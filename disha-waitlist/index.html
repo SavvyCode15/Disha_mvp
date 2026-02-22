@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tour Guide India | Early Access</title>
+    <meta name="description"
+        content="Audio-guided monument tours + real-time scam warnings + fair prices for India tourists.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS reset and base styles */
+        :root {
+            --primary: #667eea;
+            --primary-dark: #5a6fe0;
+            --accent: #ff6b35;
+            --accent-light: #ff8c5a;
+            --text-dark: #1a1a1a;
+            --text-light: #4a4a4a;
+            --bg-light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: white;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            line-height: 1.2;
+            color: var(--text-dark);
+        }
+
+        /* Hero Section - Modern Redesign */
+        .hero {
+            position: relative;
+            padding: 140px 20px 100px;
+            text-align: center;
+            background:
+                linear-gradient(135deg, rgba(16, 24, 40, 0.85) 0%, rgba(30, 15, 45, 0.75) 100%),
+                url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+            color: white;
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.05);
+            /* Glassmorphism */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 60px 40px;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: floatIn 1s ease-out forwards;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(4px);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #f1f5f9;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero h1 span.highlight {
+            background: linear-gradient(to right, #ffd700, #ff8c5a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            max-width: 750px;
+            margin: 0 auto 40px;
+            color: #e2e8f0;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, #764ba2 100%);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 30px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes floatIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-content {
+                padding: 40px 20px;
+                border: none;
+                background: transparent;
+                box-shadow: none;
+                backdrop-filter: none;
+            }
+        }
+
+        /* Trust Signals */
+        .trust-banner {
+            background: var(--bg-light);
+            padding: 24px 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .trust-item {
+            font-weight: 600;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 60px 20px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .problem-box {
+            background: #fff0f0;
+            border: 1px solid #ffcaca;
+            padding: 24px;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #d32f2f;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            background: var(--bg-light);
+            text-align: center;
+        }
+
+        .features-header {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .features h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 20px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* How it works */
+        .how-it-works {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .how-it-works h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        /* Form Section */
+        .waitlist-section {
+            padding: 100px 20px;
+            background: linear-gradient(to bottom, #fff, var(--bg-light));
+            text-align: center;
+        }
+
+        .waitlist-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .waitlist-section>p {
+            margin-bottom: 40px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .email-form {
+            background: white;
+            border-radius: 16px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            max-width: 550px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 16px;
+            font-size: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-error {
+            color: #d32f2f;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .bonus-badge {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #333;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .bonus-text {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-top: 5px;
+            opacity: 0.8;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            height: 60px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .success-message {
+            text-align: center;
+            padding: 40px 20px;
+            display: none;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .success-message h3 {
+            color: #10b981;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .waitlist-number {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-top: 20px;
+        }
+
+        .waitlist-counter {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .waitlist-counter span {
+            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: #a0aec0;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .email-form {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge fade-in">✨ AI Audio Guide for India</div>
+            <h1 class="fade-in">Discover <span class="highlight">Hidden Gems</span><br>& Avoid Scams in India</h1>
+            <p class="fade-in">Experience AI-guided tours for famous monuments and secret local spots alike. Get
+                real-time scam
+                warnings and navigate India's true beauty like a local, not a target.</p>
+            <div class="fade-in">
+                <button class="cta-button" onclick="scrollToForm()">Join <span class="counter-display">523</span>+
+                    Travelers
+                    → Get Early Access</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Signals -->
+    <div class="trust-banner fade-in">
+        <div class="trust-item">✨ <span class="counter-display">523</span>+ travelers waiting</div>
+        <div class="trust-item">🚀 Launching March 2026</div>
+        <div class="trust-item">🗺️ Delhi → Agra → Jaipur</div>
+    </div>
+
+    <!-- Problem Section -->
+    <section class="problem-section fade-in">
+        <div class="problem-box">
+            "Tourists often spend all their time in crowded spots and still lose ₹2000+ daily to scams. Standard maps
+            show WHERE you are, but miss the hidden gems just one street away."
+        </div>
+    </section>
+
+    <!-- Main Feature Highlight -->
+    <section class="features">
+        <div class="features-header fade-in">
+            <div style="font-size: 3.5rem; margin-bottom: 10px;">🤖</div>
+            <h2>Discover Hidden Gems While Staying Safe From Scams</h2>
+            <p style="font-size: 1.1rem; color: var(--text-light); max-width: 650px; margin: 0 auto;">Ask questions
+                naturally as you walk. Hear the history of famous sites AND the secret spots tourists skip. Like having
+                a local friend guiding you.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">💎</div>
+                <h3>Secret Hidden Gems</h3>
+                <p>Most tourists only see 10% of the city. Make your trip unforgettable by exploring beautiful,
+                    authentic backstreets and monuments missing from standard guides.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🎧</div>
+                <h3>Voice-Powered</h3>
+                <p>Hands-free conversations while exploring. Just speak into your earphones and hear the fascinating
+                    history of what you're seeing.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🚨</div>
+                <h3>Real-Time Warnings</h3>
+                <p>Get GPS-triggered alerts before scams happen. We notify you when you enter a high-risk zone for touts
+                    or fake ticket offices.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">💰</div>
+                <h3>Fair Price Database</h3>
+                <p>Know exactly what locals pay for transport, street food, and souvenirs so you never pay the "tourist
+                    tax" again.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works fade-in">
+        <h2>How It Works</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3 style="margin-bottom: 10px;">📍 Walk to Monument</h3>
+                <p style="color: var(--text-light);">GPS accurately detects your location at the site seamlessly.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3 style="margin-bottom: 10px;">🤖 AI Guide Speaks</h3>
+                <p style="color: var(--text-light);">Contextual audio tour begins automatically without lifting a
+                    finger.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3 style="margin-bottom: 10px;">💬 Ask Anything</h3>
+                <p style="color: var(--text-light);">Voice Q&A about current history, local prices, and safety warnings.
+                </p>
+            </div>
+        </div>
+
+        <div style="margin-top: 50px;">
+            <button class="cta-button" onclick="scrollToForm()">Never Overpay Again → Join Waitlist</button>
+        </div>
+    </section>
+
+    <!-- Waitlist Form Section -->
+    <section id="waitlist-section" class="waitlist-section">
+        <h2 class="fade-in">Get Early Access</h2>
+        <p class="fade-in">Join the exclusive waitlist and download your free guide today.</p>
+
+        <div class="email-form fade-in" id="form-container">
+            <div class="bonus-badge">
+                🎁 FREE BONUS: Delhi Scam Survival Guide (PDF)
+                <span class="bonus-text">Instant download with 15 common scams + solutions</span>
+            </div>
+
+            <form id="waitlist-form">
+                <!-- Honeypot -->
+                <input type="text" name="_honey" style="display:none">
+
+                <div class="form-group">
+                    <label for="name">First Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address <span style="color: red;">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    <div class="form-error" id="email-error">Please enter a valid email</div>
+                    <div class="form-error" id="api-error">Oops! Something went wrong. Please try again.</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="travelDate">When are you visiting India?</label>
+                    <input type="text" id="travelDate" name="travelDate"
+                        placeholder="e.g.,  2025, Summer 2025, Planning next year">
+                </div>
+
+                <div class="form-group">
+                    <label for="interest">What interests you most?</label>
+                    <select id="interest" name="interest">
+                        <option value="Finding hidden gems & local spots">Finding hidden gems & local spots</option>
+                        <option value="AI audio tour guide">AI audio tour guide</option>
+                        <option value="Scam warnings & fair prices">Scam warnings & fair prices</option>
+                        <option value="All of the above" selected>All of the above</option>
+                    </select>
+                </div>
+
+                <p style="font-size: 0.85rem; color: var(--text-light); text-align: center; margin-bottom: 20px;">
+                    🔒 Your information is safely stored and sent directly to our team.
+                </p>
+
+                <button type="submit" id="submit-btn" class="submit-btn">Get Early Access + Free Guide</button>
+            </form>
+
+            <div class="waitlist-counter">
+                🎉 <span class="counter-display">523</span> travelers waiting
+            </div>
+        </div>
+
+        <div class="success-message fade-in" id="success-container">
+            <div class="success-icon">✅</div>
+            <h3>You're on the waitlist!</h3>
+            <p>Check your email for the Delhi Scam Survival Guide (PDF)</p>
+            <p class="waitlist-number" id="success-number">You're traveler #524</p>
+            <button class="cta-button" style="margin-top: 30px;"
+                onclick="window.open('https://twitter.com/intent/tweet?text=I%20just%20joined%20the%20waitlist%20for%20an%20AI%20tour%20guide%20that%20prevents%20scams%20in%20India!%20%F0%9F%87%AE%F0%9F%87%B3', '_blank')">
+                Share with friends →
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Built to protect travelers, not exploit them.</p>
+        <p>Email: <a href="mailto:hello@safeguide-india.com">hello@safeguide-india.com</a></p>
+        <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.7;">We hate spam. Your email is safe with us.</p>
+    </footer>
+
+    <script>
+        // Track form views
+        window.addEventListener('load', () => {
+            console.log('Waitlist page loaded');
+            // Send to analytics: pageview
+            updateCounterDisplays();
+
+            // Trigger initial visibility check
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 100);
+        });
+
+        // Intersection Observer for fade-in animations on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Constants
+        // 🛑 IMPORTANT FOR ADMIN: Change this to your real personal email!
+        // Responses will immediately be emailed to this address by FormSubmit.co.
+        const EMAIL_RECEIVER = "hello@safeguide-india.com";
+        const STARTING_COUNT = 523; // Will display as 523 initially
+
+        // Counter Logic
+        function getWaitlistCount() {
+            const list = JSON.parse(localStorage.getItem('waitlist') || '[]');
+            return STARTING_COUNT + list.length;
+        }
+
+        function updateCounterDisplays() {
+            const count = getWaitlistCount();
+            document.querySelectorAll('.counter-display').forEach(el => {
+                el.innerText = count;
+            });
+        }
+
+        // Smooth scroll to form
+        function scrollToForm() {
+            const section = document.getElementById('waitlist-section');
+            section.scrollIntoView({ behavior: 'smooth' });
+
+            // Focus email input slightly after scroll completes
+            setTimeout(() => {
+                document.getElementById('email').focus();
+            }, 600);
+        }
+
+        // Track form field focus (shows interest)
+        document.querySelectorAll('input, select').forEach(field => {
+            field.addEventListener('focus', () => {
+                console.log(`User focused: ${field.name}`);
+                // Send to analytics: form_field_focus
+            });
+        });
+
+        // Form submission handling
+        const form = document.getElementById('waitlist-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const formContainer = document.getElementById('form-container');
+        const successContainer = document.getElementById('success-container');
+        const emailInput = document.getElementById('email');
+        const nameInput = document.getElementById('name');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            console.log('Form submitted');
+            // Send to analytics: form_submission
+
+            const emailVal = emailInput.value.trim().toLowerCase();
+            const emailError = document.getElementById('email-error');
+            const apiError = document.getElementById('api-error');
+
+            emailError.style.display = 'none';
+            apiError.style.display = 'none';
+
+            // Basic validation
+            if (!emailVal.includes('@') || !emailVal.includes('.')) {
+                emailError.style.display = 'block';
+                return;
+            }
+
+            // Change button text
+            submitBtn.textContent = 'Joining...';
+            submitBtn.disabled = true;
+
+            const formData = {
+                name: nameInput.value.trim(),
+                email: emailVal,
+                travelDate: document.getElementById('travelDate').value.trim(),
+                interest: document.getElementById('interest').value,
+                timestamp: new Date().toISOString(),
+                userAgent: navigator.userAgent
+            };
+
+            // 1. Save to localStorage (immediate backup)
+            let waitlist;
+            try {
+                waitlist = JSON.parse(localStorage.getItem('waitlist') || '[]');
+            } catch (e) {
+                waitlist = [];
+            }
+
+            // Check for duplicates in local storage to prevent double submission
+            const isDuplicate = waitlist.some(entry => entry.email === formData.email);
+            if (!isDuplicate) {
+                waitlist.push(formData);
+                localStorage.setItem('waitlist', JSON.stringify(waitlist));
+            }
+
+            try {
+                // 2. Send via FormSubmit.co AJAX API
+                const response = await fetch(`https://formsubmit.co/ajax/${EMAIL_RECEIVER}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: formData.name || 'Not provided',
+                        email: formData.email,
+                        "Travel Date": formData.travelDate || 'Not specified',
+                        "Primary Interest": formData.interest,
+                        _subject: 'New Waitlist Signup!',
+                        _template: 'table',
+                        _honey: form.querySelector('[name="_honey"]').value
+                    })
+                });
+
+                if (response.ok) {
+                    onSignupSuccess();
+                } else {
+                    throw new Error("Form submission returned a non-OK response.");
+                }
+            } catch (error) {
+                console.error("AJAX failed", error);
+
+                // If it fails but we saved locally, we can still show success
+                // Or we can show the error state. Following the prompt's Error Handling:
+                submitBtn.textContent = 'Try Again';
+                submitBtn.disabled = false;
+                apiError.style.display = 'block';
+            }
+        });
+
+        function onSignupSuccess() {
+            console.log('Signup successful');
+            // Send to analytics: waitlist_signup_success
+
+            updateCounterDisplays();
+
+            const position = getWaitlistCount();
+            document.getElementById('success-number').textContent = `You're traveler #${position}`;
+
+            formContainer.style.display = 'none';
+            successContainer.style.display = 'block';
+            successContainer.classList.add('visible'); // Trigger fade in
+
+            // Optional: trigger Facebook Pixel, Google Ads conversion here
+        }
+    </script>
+</body>
+
+</html>
